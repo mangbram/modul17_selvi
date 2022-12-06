@@ -5,7 +5,8 @@ SECRET = process.env.SECRET
 const Auth = {
     verifyToken(req, res, next){
       // const token = req.cookies['JWT'];
-      const {token} =req.body
+      // const {token} =req.body
+      const token = req.cookies['JWT'] || req.body.token
         console.log(token);
         if (token) {
           // 12. Lalukan jwt verify 
